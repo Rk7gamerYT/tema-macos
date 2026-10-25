@@ -1,0 +1,57 @@
+# Tema GRUB estilo macOS (tema-macos)
+title-text: ""
+desktop-image: "background.png"
+desktop-color: "#0b0d1a"
+terminal-font: "Inter Regular 16"
+terminal-box: "menu_*.png"
+
++ label {
+    top = 18%
+    left = 0
+    width = 100%
+    align = "center"
+    text = "Escolha o sistema"
+    font = "Inter Regular 36"
+    color = "#ffffff"
+}
+
++ boot_menu {
+    left = 50%-320
+    top = 32%
+    width = 640
+    height = 44%
+    menu_pixmap_style = "menu_*.png"
+    item_font = "Inter Regular 20"
+    item_color = "#c8c8d2"
+    selected_item_font = "Inter Regular 20"
+    selected_item_color = "#ffffff"
+    selected_item_pixmap_style = "select_*.png"
+    item_height = 44
+    item_padding = 18
+    item_spacing = 8
+    icon_width = 0
+    icon_height = 0
+    item_icon_space = 0
+    scrollbar = false
+}
+
++ label {
+    id = "__timeout__"
+    top = 86%
+    left = 0
+    width = 100%
+    align = "center"
+    font = "Inter Regular 16"
+    color = "#a0a0b0"
+    text = "Iniciando em %d s"
+}
+
++ label {
+    top = 92%
+    left = 0
+    width = 100%
+    align = "center"
+    font = "Inter Regular 16"
+    color = "#707080"
+    text = "↑ ↓ escolher   ·   Enter iniciar   ·   E editar   ·   C linha de comando"
+}

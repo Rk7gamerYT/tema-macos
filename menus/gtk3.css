@@ -1,0 +1,24 @@
+/* tema-macos: menus estilo macOS (GTK3). Desfazer: bash ~/tema-macos/padronizar.sh --desfazer */
+.csd.popup decoration { border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.10); }
+menu, .menu, .context-menu {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: rgba(30, 30, 30, 0.90);
+  color: #e6e6e6;
+  font-family: Inter;
+}
+menu menuitem, .menu menuitem, .context-menu menuitem {
+  min-height: 20px;
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+menu menuitem:hover, .menu menuitem:hover, .context-menu menuitem:hover,
+menu menuitem:selected, .menu menuitem:selected {
+  background-color: #0860f2;
+  color: #ffffff;
+}
+menu menuitem:hover accelerator, menu menuitem:hover arrow { color: rgba(255,255,255,0.8); }
+menu separator { margin: 4px 6px; background-color: rgba(255,255,255,0.12); }
+popover.menu, popover.background.menu { border-radius: 10px; }
+popover.menu modelbutton { border-radius: 5px; padding: 3px 10px; min-height: 20px; }
+popover.menu modelbutton:hover { background-color: #0860f2; color: #ffffff; }

@@ -1,0 +1,7 @@
+{
+  "uuid": "barra-mac@tema-macos",
+  "name": "Barra Mac (tema-macos)",
+  "description": "Relógio no formato do macOS (Sáb 25 de out. 10:30) e ícone da Central de Controle na barra.",
+  "shell-version": ["48", "49", "50"],
+  "version": 1
+}

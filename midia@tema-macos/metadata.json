@@ -1,0 +1,7 @@
+{
+  "uuid": "midia@tema-macos",
+  "name": "Tocando agora (tema-macos)",
+  "description": "Widget de mídia na área de trabalho no estilo do macOS: capa, música, progresso e controles para qualquer player MPRIS. Posições em ~/.config/tema-macos/midia.json (widgets.py).",
+  "shell-version": ["48", "49", "50"],
+  "version": 1
+}

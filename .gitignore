@@ -1,0 +1,7 @@
+# Temas WhiteSur: baixados pelo instalar.sh de github.com/vinceliuice
+src/
+__pycache__/
+*.pyc
+# Configurações pessoais (geradas pelos scripts na primeira execução)
+widgets.json
+fundos.json

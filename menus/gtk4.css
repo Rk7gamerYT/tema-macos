@@ -1,0 +1,29 @@
+
+/* >>> tema-macos: menus estilo macOS (GTK4/libadwaita). Desfazer: bash ~/tema-macos/padronizar.sh --desfazer */
+popover.menu > contents,
+popover > contents.menu {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: rgba(30, 30, 30, 0.90);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+popover.menu modelbutton {
+  min-height: 22px;
+  padding: 2px 10px;
+  border-radius: 5px;
+  font-family: Inter;
+}
+popover.menu modelbutton:hover, popover.menu modelbutton:selected,
+popover.menu modelbutton:focus:focus-visible {
+  background-color: #0860f2;
+  color: #ffffff;
+}
+popover.menu modelbutton:hover accelerator { color: rgba(255, 255, 255, 0.8); }
+popover.menu separator { margin: 4px 6px; background-color: rgba(255, 255, 255, 0.12); }
+/* Barra lateral translúcida estilo Finder (Nautilus, Configurações): o Blur my Shell desfoca o que fica atrás */
+window.nautilus-window, window.nautilus-window.background { background-color: transparent; }
+window.nautilus-window .sidebar-pane, window.nautilus-window .navigation-sidebar { background-color: rgba(36, 36, 38, 0.55); }
+window.nautilus-window .content-pane { background-color: #1e1e1f; }
+.sidebar-pane .navigation-sidebar > row:selected { background-color: rgba(255, 255, 255, 0.14); border-radius: 6px; }
+/* <<< tema-macos */

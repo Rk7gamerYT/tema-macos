@@ -1,0 +1,36 @@
+/* Mesmo vidro escuro dos cards do Desktop Widgets (widgets.py: CARD, raio 22, borda 8%) */
+.midia-card {
+  width: 300px;
+  background-color: rgba(28, 28, 36, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  padding: 16px 20px 12px 20px;
+  spacing: 10px;
+  font-family: Inter;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+.midia-top { spacing: 12px; }
+.midia-art {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.10);
+  background-size: cover;
+  background-position: center;
+}
+.midia-art-icon { icon-size: 28px; color: rgba(255, 255, 255, 0.55); }
+.midia-info { spacing: 1px; }
+.midia-app { font-size: 10px; font-weight: 700; color: rgba(255, 255, 255, 0.55); }
+.midia-title { font-size: 14px; font-weight: 700; }
+.midia-artist { font-size: 12px; color: rgba(255, 255, 255, 0.70); }
+.midia-progress { spacing: 8px; }
+.midia-time { font-size: 10px; font-feature-settings: "tnum"; color: rgba(255, 255, 255, 0.60); min-width: 34px; }
+.midia-track { height: 4px; border-radius: 2px; background-color: rgba(255, 255, 255, 0.18); }
+.midia-fill { border-radius: 2px; background-color: rgba(255, 255, 255, 0.85); }
+.midia-controls { spacing: 18px; }
+.midia-button { border-radius: 99px; padding: 6px; color: white; }
+.midia-button:hover { background-color: rgba(255, 255, 255, 0.12); }
+.midia-button:active { background-color: rgba(255, 255, 255, 0.20); }
+.midia-button-icon { icon-size: 18px; }
+.midia-play .midia-button-icon { icon-size: 24px; }

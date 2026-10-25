@@ -1,0 +1,75 @@
+[Plymouth Theme]
+Name=Tema macOS
+Description=Fundo preto, logo branco do Ubuntu no centro e barra de progresso fina (tema-macos)
+ModuleName=two-step
+
+[two-step]
+Font=Inter 12
+TitleFont=Inter Light 28
+ImageDir=/usr/share/plymouth/themes/tema-macos
+DialogHorizontalAlignment=.5
+DialogVerticalAlignment=.75
+TitleHorizontalAlignment=.5
+TitleVerticalAlignment=.382
+HorizontalAlignment=.5
+VerticalAlignment=.7
+WatermarkHorizontalAlignment=.5
+WatermarkVerticalAlignment=.45
+Transition=none
+TransitionDuration=0.0
+BackgroundStartColor=0x000000
+BackgroundEndColor=0x000000
+ProgressBarBackgroundColor=0x3a3a3c
+ProgressBarForegroundColor=0xffffff
+ProgressBarWidth=200
+ProgressBarHeight=4
+ProgressBarHorizontalAlignment=.5
+ProgressBarVerticalAlignment=.58
+DialogClearsFirmwareBackground=true
+MessageBelowAnimation=true
+
+[boot-up]
+UseEndAnimation=false
+UseAnimation=false
+UseProgressBar=true
+UseFirmwareBackground=false
+
+[shutdown]
+UseEndAnimation=false
+UseAnimation=false
+UseProgressBar=false
+UseFirmwareBackground=false
+
+[reboot]
+UseEndAnimation=false
+UseAnimation=false
+UseProgressBar=false
+UseFirmwareBackground=false
+
+[updates]
+SuppressMessages=true
+ProgressBarShowPercentComplete=true
+UseProgressBar=true
+Title=Instalando atualizações...
+SubTitle=Não desligue o computador
+
+[system-upgrade]
+SuppressMessages=true
+ProgressBarShowPercentComplete=true
+UseProgressBar=true
+Title=Atualizando o sistema...
+SubTitle=Não desligue o computador
+
+[firmware-upgrade]
+SuppressMessages=true
+ProgressBarShowPercentComplete=true
+UseProgressBar=true
+Title=Atualizando o firmware...
+SubTitle=Não desligue o computador
+
+[system-reset]
+SuppressMessages=true
+ProgressBarShowPercentComplete=true
+UseProgressBar=true
+Title=Restaurando o sistema...
+SubTitle=Não desligue o computador

@@ -1,0 +1,339 @@
+/* YouTube Music Desktop (ytmdesktop) no estilo macOS escuro / Apple Music.
+ * Combina com WhiteSur Dark, acento azul do sistema e fonte Inter.
+ * Aplicar: bash ~/tema-macos/ytmdesktop/aplicar.sh  (o app recarrega sozinho ao salvar). */
+
+:root, html, ytmusic-app {
+  --mac-bg: #1e1e1e;
+  --mac-bg-2: #262628;
+  --mac-sidebar: rgba(40, 40, 42, 0.72);
+  --mac-bar: rgba(30, 30, 30, 0.78);
+  --mac-hover: rgba(255, 255, 255, 0.07);
+  --mac-active: rgba(255, 255, 255, 0.12);
+  --mac-sep: rgba(255, 255, 255, 0.08);
+  --mac-text: rgba(255, 255, 255, 0.92);
+  --mac-text-2: rgba(235, 235, 245, 0.60);
+  --mac-accent: #0a84ff;
+  --mac-radius: 10px;
+  --mac-radius-lg: 14px;
+  --mac-font: -apple-system, "SF Pro Text", "SF Pro Display", "Inter", "Inter Display", "Cantarell", sans-serif;
+
+  /* Variáveis do próprio YouTube Music */
+  --ytmusic-background: var(--mac-bg) !important;
+  --ytmusic-general-background-a: var(--mac-bg) !important;
+  --ytmusic-general-background-b: var(--mac-bg) !important;
+  --ytmusic-general-background-c: var(--mac-bg-2) !important;
+  --ytmusic-brand-background-solid: var(--mac-bg) !important;
+  --ytmusic-brand-background-translucent: var(--mac-bar) !important;
+  --ytmusic-search-background: rgba(255, 255, 255, 0.08) !important;
+  --ytmusic-player-bar-background: var(--mac-bar) !important;
+  --ytmusic-text-primary: var(--mac-text) !important;
+  --ytmusic-text-secondary: var(--mac-text-2) !important;
+  --yt-spec-text-primary: var(--mac-text) !important;
+  --yt-spec-text-secondary: var(--mac-text-2) !important;
+  --yt-spec-call-to-action: var(--mac-accent) !important;
+  --yt-spec-themed-blue: var(--mac-accent) !important;
+  --yt-spec-brand-button-background: var(--mac-accent) !important;
+  --yt-spec-static-brand-red: var(--mac-accent) !important;
+  --yt-spec-10-percent-layer: var(--mac-sep) !important;
+  --yt-spec-badge-chip-background: rgba(255, 255, 255, 0.08) !important;
+  --yt-spec-menu-background: rgba(44, 44, 46, 0.92) !important;
+  --yt-spec-raised-background: rgba(44, 44, 46, 0.92) !important;
+  --paper-slider-active-color: var(--mac-accent) !important;
+  --paper-slider-knob-color: #fff !important;
+  --paper-slider-container-color: rgba(255, 255, 255, 0.18) !important;
+  --paper-slider-secondary-color: rgba(255, 255, 255, 0.30) !important;
+  --paper-checkbox-checked-color: var(--mac-accent) !important;
+  --paper-toggle-button-checked-bar-color: var(--mac-accent) !important;
+  --paper-toggle-button-checked-button-color: #fff !important;
+}
+
+/* Tipografia */
+html, body, ytmusic-app, yt-formatted-string, tp-yt-paper-item, input, button {
+  font-family: var(--mac-font) !important;
+  -webkit-font-smoothing: antialiased;
+}
+.title, ytmusic-carousel-shelf-basic-header-renderer .title,
+h1, h2, ytmusic-responsive-header-renderer .title {
+  letter-spacing: -0.02em;
+  font-weight: 700 !important;
+}
+
+body, ytmusic-app, ytmusic-app-layout, #layout, ytmusic-browse-response,
+ytmusic-tabbed-search-results-renderer, ytmusic-section-list-renderer {
+  background: var(--mac-bg) !important;
+}
+
+/* Barra de cima: vidro translúcido */
+#nav-bar-background, ytmusic-nav-bar, #nav-bar-divider {
+  background: var(--mac-bar) !important;
+  backdrop-filter: saturate(180%) blur(24px);
+  border: none !important;
+}
+#nav-bar-divider { border-bottom: 1px solid var(--mac-sep) !important; }
+ytmusic-nav-bar ytmusic-logo { filter: grayscale(1) brightness(1.8); }
+
+/* Busca arredondada estilo Spotlight */
+ytmusic-search-box #input-box, ytmusic-search-box .search-box {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid var(--mac-sep) !important;
+  border-radius: 9px !important;
+}
+ytmusic-search-box[opened] .search-container,
+ytmusic-search-box[opened] #suggestion-list {
+  background: rgba(44, 44, 46, 0.95) !important;
+  border-radius: var(--mac-radius) !important;
+  backdrop-filter: blur(30px);
+}
+
+/* Barra lateral translúcida, itens em pílula */
+#guide-wrapper, #mini-guide-background, #guide-content, ytmusic-guide-renderer,
+tp-yt-app-drawer #contentContainer {
+  background: var(--mac-sidebar) !important;
+  backdrop-filter: saturate(180%) blur(30px);
+  border-right: 1px solid var(--mac-sep) !important;
+}
+ytmusic-guide-entry-renderer tp-yt-paper-item,
+ytmusic-guide-entry-renderer #endpoint,
+ytmusic-guide-collapsible-entry-renderer tp-yt-paper-item {
+  border-radius: 8px !important;
+  margin: 1px 8px !important;
+}
+ytmusic-guide-entry-renderer:hover tp-yt-paper-item { background: var(--mac-hover) !important; }
+ytmusic-guide-entry-renderer[active] tp-yt-paper-item {
+  background: var(--mac-active) !important;
+}
+ytmusic-guide-entry-renderer[active] yt-icon,
+ytmusic-guide-entry-renderer[active] .title { color: var(--mac-accent) !important; }
+ytmusic-guide-section-renderer #divider, ytmusic-guide-renderer #divider { border-color: var(--mac-sep) !important; }
+
+/* Chips de categoria: pílulas discretas, selecionada em azul */
+ytmusic-chip-cloud-chip-renderer a, ytmusic-chip-cloud-chip-renderer .gradient-box,
+ytmusic-chip-cloud-chip-renderer {
+  border-radius: 999px !important;
+}
+ytmusic-chip-cloud-chip-renderer a {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid var(--mac-sep) !important;
+}
+ytmusic-chip-cloud-chip-renderer a:hover { background: var(--mac-active) !important; }
+ytmusic-chip-cloud-chip-renderer[is-selected] a,
+ytmusic-chip-cloud-chip-renderer[chip-style="STYLE_PRIMARY"] a {
+  background: var(--mac-accent) !important;
+  border-color: transparent !important;
+  color: #fff !important;
+}
+
+/* Capas com cantos arredondados e sombra suave */
+ytmusic-two-row-item-renderer .image-wrapper, ytmusic-two-row-item-renderer img,
+ytmusic-two-row-item-renderer ytmusic-thumbnail-renderer,
+ytmusic-responsive-header-renderer ytmusic-thumbnail-renderer, ytmusic-responsive-header-renderer img,
+ytmusic-detail-header-renderer img, ytmusic-immersive-header-renderer img,
+ytmusic-player #song-image, ytmusic-player #song-image img, ytmusic-player .song-media-controls {
+  border-radius: var(--mac-radius) !important;
+  overflow: hidden;
+}
+ytmusic-two-row-item-renderer:not([aspect-ratio="MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE"][item-type*="artist"]) .image-wrapper {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+ytmusic-responsive-list-item-renderer .left-items,
+ytmusic-responsive-list-item-renderer img { border-radius: 6px !important; }
+ytmusic-player-bar .image { border-radius: 6px !important; }
+/* artistas continuam redondos */
+ytmusic-two-row-item-renderer[item-type="MUSIC_PAGE_TYPE_ARTIST"] .image-wrapper,
+ytmusic-two-row-item-renderer[item-type="MUSIC_PAGE_TYPE_ARTIST"] img { border-radius: 50% !important; }
+
+/* Listas de músicas: linhas com hover arredondado, como no Apple Music */
+ytmusic-responsive-list-item-renderer {
+  border-radius: 8px;
+  border-bottom: 1px solid var(--mac-sep) !important;
+}
+ytmusic-responsive-list-item-renderer:hover { background: var(--mac-hover) !important; }
+ytmusic-responsive-list-item-renderer[play-button-state="playing"],
+ytmusic-responsive-list-item-renderer[play-button-state="paused"] {
+  background: rgba(10, 132, 255, 0.14) !important;
+}
+
+/* Botões */
+yt-button-renderer button, ytmusic-play-button-renderer, yt-button-shape button,
+.yt-spec-button-shape-next {
+  border-radius: 999px !important;
+}
+.yt-spec-button-shape-next--filled, .yt-spec-button-shape-next--call-to-action.yt-spec-button-shape-next--filled,
+yt-button-renderer[style-type="STYLE_PRIMARY"] button {
+  background: var(--mac-accent) !important;
+  color: #fff !important;
+}
+.yt-spec-button-shape-next--tonal, .yt-spec-button-shape-next--outline {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: var(--mac-sep) !important;
+}
+ytmusic-play-button-renderer { --ytmusic-play-button-background-color: var(--mac-accent) !important; }
+
+/* Player embaixo: vidro, como a barra do Apple Music */
+ytmusic-player-bar {
+  background: var(--mac-bar) !important;
+  backdrop-filter: saturate(180%) blur(30px);
+  border-top: 1px solid var(--mac-sep) !important;
+}
+ytmusic-player-bar .title { color: var(--mac-text) !important; font-weight: 600 !important; }
+ytmusic-player-bar .byline, ytmusic-player-bar .time-info { color: var(--mac-text-2) !important; }
+ytmusic-player-bar #play-pause-button { color: #fff !important; }
+ytmusic-player-bar tp-yt-paper-icon-button:hover, ytmusic-player-bar yt-icon-button:hover {
+  background: var(--mac-hover) !important;
+  border-radius: 50%;
+}
+ytmusic-player-bar .like.ytmusic-like-button-renderer[aria-pressed="true"],
+ytmusic-like-button-renderer[like-status="LIKE"] #button-shape-like button { color: var(--mac-accent) !important; }
+
+/* Sliders finos com bolinha branca */
+#progress-bar.ytmusic-player-bar, tp-yt-paper-slider#progress-bar {
+  --paper-slider-height: 3px;
+}
+tp-yt-paper-slider #sliderKnobInner, tp-yt-paper-slider .slider-knob-inner {
+  background: #fff !important;
+  border: none !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+tp-yt-paper-slider #primaryProgress, tp-yt-paper-slider #progressContainer { border-radius: 999px; }
+
+/* Tela da música tocando */
+ytmusic-player-page {
+  background: radial-gradient(120% 80% at 30% 0%, #2c2c30 0%, var(--mac-bg) 65%) !important;
+}
+ytmusic-player-page tp-yt-paper-tabs { background: transparent !important; }
+/* Fila e letra num cartão de vidro por cima do brilho ambiente */
+ytmusic-player-page #side-panel {
+  position: relative;
+  z-index: 2;
+  background: rgba(30, 30, 30, 0.62) !important;
+  backdrop-filter: saturate(160%) blur(30px);
+  border: 1px solid var(--mac-sep) !important;
+  border-radius: var(--mac-radius-lg) !important;
+  overflow: hidden;
+}
+#mac-ambilight { border-radius: 40px; }
+ytmusic-player-page tp-yt-paper-tabs { --paper-tabs-selection-bar-color: var(--mac-accent) !important; }
+ytmusic-player-queue-item {
+  border-radius: 8px;
+}
+ytmusic-player-queue-item:hover { background: var(--mac-hover) !important; }
+ytmusic-player-queue-item[play-button-state="playing"],
+ytmusic-player-queue-item[play-button-state="paused"],
+ytmusic-player-queue-item[selected] { background: rgba(10, 132, 255, 0.16) !important; }
+ytmusic-av-toggle, ytmusic-av-toggle .song-button, ytmusic-av-toggle .video-button { border-radius: 999px !important; }
+ytmusic-av-toggle .song-button[aria-pressed="true"], ytmusic-av-toggle .video-button[aria-pressed="true"],
+ytmusic-av-toggle[playback-mode="ATV_PREFERRED"] .song-button,
+ytmusic-av-toggle[playback-mode="OMV_PREFERRED"] .video-button {
+  background: rgba(255, 255, 255, 0.16) !important;
+}
+
+/* Menus e popups: vidro com cantos de 10px */
+tp-yt-iron-dropdown, ytmusic-menu-popup-renderer, ytmusic-multi-page-menu-renderer,
+tp-yt-paper-listbox, ytmusic-popup-container tp-yt-paper-dialog, tp-yt-paper-dialog,
+ytmusic-notification-action-renderer, tp-yt-paper-toast, yt-notification-action-renderer {
+  background: rgba(44, 44, 46, 0.92) !important;
+  backdrop-filter: saturate(180%) blur(30px);
+  border-radius: var(--mac-radius) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5) !important;
+}
+ytmusic-menu-popup-renderer tp-yt-paper-listbox, ytmusic-multi-page-menu-renderer tp-yt-paper-listbox {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 5px !important;
+}
+ytmusic-menu-navigation-item-renderer, ytmusic-menu-service-item-renderer,
+ytmusic-toggle-menu-service-item-renderer, ytmusic-menu-service-item-download-renderer,
+tp-yt-paper-listbox tp-yt-paper-item {
+  border-radius: 6px !important;
+}
+ytmusic-menu-navigation-item-renderer:hover, ytmusic-menu-service-item-renderer:hover,
+ytmusic-toggle-menu-service-item-renderer:hover, tp-yt-paper-listbox tp-yt-paper-item:hover,
+ytmusic-menu-service-item-download-renderer:hover {
+  background: var(--mac-accent) !important;
+  color: #fff !important;
+}
+ytmusic-menu-navigation-item-renderer:hover yt-icon,
+ytmusic-menu-service-item-renderer:hover yt-icon,
+ytmusic-toggle-menu-service-item-renderer:hover yt-icon { color: #fff !important; fill: #fff !important; }
+
+/* Barras de rolagem finas estilo macOS */
+::-webkit-scrollbar { width: 10px; height: 10px; background: transparent !important; }
+::-webkit-scrollbar-track { background: transparent !important; }
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.22) !important;
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box !important;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.38) !important; background-clip: content-box !important; }
+
+::selection { background: rgba(10, 132, 255, 0.45); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--mac-accent) !important; outline-offset: 2px; border-radius: 6px; }
+
+/* ===== Painéis flutuantes arredondados (estilo Apple Music / macOS) ===== */
+/* Barra lateral como um cartão solto da borda */
+#guide-wrapper.ytmusic-app, tp-yt-app-drawer #contentContainer {
+  background: var(--mac-bg) !important;
+  backdrop-filter: none !important;
+  border-right: none !important;
+}
+#guide-content.ytmusic-app, #mini-guide-background, #mini-guide {
+  margin: 8px !important;
+  height: calc(100vh - var(--ytmusic-nav-bar-height, 64px) - 16px - 88px) !important;
+  border-radius: var(--mac-radius-lg) !important;
+  border: 1px solid var(--mac-sep) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+#mini-guide-background { width: calc(var(--ytmusic-mini-guide-width, 72px) - 4px) !important; }
+#guide-wrapper.ytmusic-app #guide-content { width: calc(100% - 16px) !important; }
+
+/* Barra de busca e barra de cima sem a linha reta */
+#nav-bar-divider { border-bottom: none !important; }
+
+/* Miniplayer novo e player antigo como uma pílula flutuante */
+ytmusic-app-layout > ytmusic-miniplayer, ytmusic-app-layout > ytmusic-player-bar {
+  left: 8px !important;
+  right: 8px !important;
+  width: auto !important;
+  bottom: 8px !important;
+  border-radius: var(--mac-radius-lg) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.45) !important;
+  background: var(--mac-bar) !important;
+  backdrop-filter: saturate(180%) blur(30px);
+  overflow: hidden;
+}
+#player-bar-background { display: none !important; }
+ytmusic-miniplayer .ytmusicTrackInfoThumbnailWrapper, ytmusic-miniplayer img { border-radius: 6px !important; overflow: hidden; }
+ytmusic-miniplayer button, ytmusic-miniplayer .ytSpecButtonShapeNextHost { border-radius: 999px !important; }
+ytmusic-miniplayer .ytMusicMiniPlayerProgressBar { accent-color: var(--mac-accent); }
+
+/* Banners, cabeçalhos e capas grandes */
+ytmusic-carousel-shelf-renderer img.image, ytmusic-browse-response img.image,
+ytmusic-immersive-header-renderer, ytmusic-visual-header-renderer, ytmusic-visual-header-renderer img,
+ytmusic-immersive-carousel-shelf-renderer, ytmusic-description-shelf-renderer,
+ytmusic-statement-banner-renderer, ytmusic-message-renderer {
+  border-radius: var(--mac-radius-lg) !important;
+  overflow: hidden;
+}
+ytmusic-video-card-renderer img, ytmusic-two-row-item-renderer yt-img-shadow,
+ytmusic-carousel ytmusic-two-row-item-renderer .image-wrapper img { border-radius: var(--mac-radius) !important; }
+
+/* Campos de texto, diálogos e botões de navegação do carrossel */
+input, textarea, tp-yt-paper-input-container, ytmusic-search-box #input-box { border-radius: 9px !important; }
+ytmusic-carousel-shelf-basic-header-renderer yt-button-renderer button,
+ytmusic-carousel-shelf-basic-header-renderer tp-yt-paper-icon-button,
+yt-icon-button, tp-yt-paper-icon-button { border-radius: 999px !important; }
+ytmusic-player-page #player, ytmusic-player-page ytmusic-player { border-radius: var(--mac-radius-lg) !important; overflow: hidden; }
+
+/* Barra de progresso azul (o YouTube Music define o gradiente vermelho no próprio slider) */
+ytmusic-player-bar #progress-bar, tp-yt-paper-slider#progress-bar, ytmusic-player-bar tp-yt-paper-slider {
+  --paper-slider-active-color: var(--mac-accent) !important;
+  --paper-progress-active-color: var(--mac-accent) !important;
+  --paper-slider-knob-color: #fff !important;
+  --paper-slider-knob-start-color: #fff !important;
+}
